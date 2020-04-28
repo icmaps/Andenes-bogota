@@ -47,11 +47,12 @@
       position: absolute;
       bottom: 0;
       right: 0;
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(39, 56, 78, 0.8);
       margin-right: 20px;
       font-family: Arial, sans-serif;
       overflow: auto;
       border-radius: 3px;
+      color: white;
     }
 
     #features {
@@ -152,7 +153,7 @@
       <h1>Ancho de Andenes en Bogotá</h1>
       <p> Este mapa pretende mostrar como el ancho de un andén impacta la posibilidad de realizar el distanciamiento social dentro de la pandemia del COVID-19 tomando como referencia una distancia de 2 metros entre personas.
       <p>El ancho de los andenes fueron determinados con <a href="https://www.ideca.gov.co/">Base de datos del IDECA</a> La cual NO fue verificada en terminos de precisión o completitud.
-        <p>No se tiene en cuenta obstaculos como árboles o canecas.</p>
+      <p>No se tiene en cuenta obstaculos como árboles o canecas.</p>
       <p><small>La idea y diseño original es de <b>dcharvey</b> en <a href="https://www.sidewalkwidths.nyc/">Sidewalk Width NYC.</a></small></p>
 
     </div>
@@ -205,8 +206,8 @@
 
 
     map.on('load', function() {
-      var layers = ['0-2m Muy angosto para mantener distancia','2-4m Es difícil mantener la distancia','4-8m Puede ser dificil mantener la distancia', '8-16m Mantener la ditancia debe ser sencillo', '>16m Es muy facil mantener la ditancia'];
-      var colors = ['#ef0101', '#ff4805','#f2d202', '#5ae736', '#15bbd1'];
+      var layers = ['0-2m Muy angosto para mantener distancia', '2-4m Es difícil mantener la distancia', '4-8m Puede ser dificil mantener la distancia', '8-16m Mantener la ditancia debe ser sencillo', '>16m Es muy facil mantener la ditancia'];
+      var colors = ['#ef0101', '#ff4805', '#f2d202', '#5ae736', '#15bbd1'];
 
       for (i = 0; i < layers.length; i++) {
         var layer = layers[i];
@@ -231,8 +232,8 @@
       if (states[0].properties.MBG_Width > 0 && states[0].properties.MBG_Width <= 2) {
         document.getElementById('pd').innerHTML = '<h3 style="color: #ef0101"><strong>' + Math.round10(states[0].properties.MBG_Width, -2) + 'm</strong></h3><p><strong><em>' + '</strong> Muy angosto para mantener distancia</em></p>';
       } else if (states[0].properties.MBG_Width > 2 && states[0].properties.MBG_Width <= 4) {
-        document.getElementById('pd').innerHTML = '<h3 style="color: #ff4805"><strong>' + Math.round10(states[0].properties.MBG_Width, -2) + 'm</strong></h3><p ><strong><em>' + '</strong> Es difícil mantener la distancia</em></p>';}
-      else if (states[0].properties.MBG_Width > 4 && states[0].properties.MBG_Width <= 8) {
+        document.getElementById('pd').innerHTML = '<h3 style="color: #ff4805"><strong>' + Math.round10(states[0].properties.MBG_Width, -2) + 'm</strong></h3><p ><strong><em>' + '</strong> Es difícil mantener la distancia</em></p>';
+      } else if (states[0].properties.MBG_Width > 4 && states[0].properties.MBG_Width <= 8) {
         document.getElementById('pd').innerHTML = '<h3 style="color: #f2d202"><strong>' + Math.round10(states[0].properties.MBG_Width, -2) + 'm</strong></h3><p ><strong><em>' + '</strong> Puede ser difícil mantener la distancia</em></p>';
       } else if (states[0].properties.MBG_Width > 8 && states[0].properties.MBG_Width <= 16) {
         document.getElementById('pd').innerHTML = '<h3 style="color: #5ae736"><strong>' + Math.round10(states[0].properties.MBG_Width, -2) + 'm</strong></h3><p ><strong><em>' + '</strong> Debe ser sencillo mantener la distancia</em></p>';
