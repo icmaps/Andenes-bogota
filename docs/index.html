@@ -64,7 +64,7 @@
 
     #legend {
       padding: 10px;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
       line-height: 18px;
       height: 80px;
       margin-bottom: 40px;
@@ -204,7 +204,7 @@
 
 
     map.on('load', function() {
-      var layers = ['0-2m Muy angosto para mantener distancia', '2-4 Puede ser dificil mantener la distancia', '4-8 Mantener la ditancia debe ser sencillo', '8-16 Es muy facil mantener la ditancia'];
+      var layers = ['0-2m Muy angosto para mantener distancia', '2-4m Puede ser dificil mantener la distancia', '4-8m Mantener la ditancia debe ser sencillo', '>8m Es muy facil mantener la ditancia'];
       var colors = ['#ef0101', '#f9b22f', '#5ae736', '#15bbd1'];
 
       for (i = 0; i < layers.length; i++) {
